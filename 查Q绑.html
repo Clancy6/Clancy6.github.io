@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QQ绑定查询</title>
+<script>
+function queryQQBinding() {
+    const qqInput = document.getElementById("qqInput").value;
+    const resultContainer = document.getElementById("resultContainer");
+    resultContainer.innerHTML = "查询中...";
+
+    const apiUrl = `https://zy.xywlapi.cc/qqapi?qq=${qqInput}`;
+    
+    const timeout = 20000; // 20 seconds
+    
+    const timeoutPromise = new Promise((resolve, reject) => {
+        setTimeout(() => reject(new Error("查询超时")), timeout);
+    });
+
+    Promise.race([fetch(apiUrl), timeoutPromise])
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 200) {
+                resultContainer.innerHTML = `
+                    <p>QQ号：${data.qq}</p>
+                    <p>绑定手机号：${data.phone}</p>
+                    <p>手机号归属地：${data.phonediqu}</p>
+                `;
+            } else {
+                resultContainer.innerHTML = `<p>${data.message}</p>`;
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+}
+</script>
+</head>
+<body>
+<h1>QQ绑定查询</h1>
+<input type="text" id="qqInput" placeholder="输入要查询的QQ号">
+<button onclick="queryQQBinding()">查询</button>
+<div id="resultContainer"></div>
+</body>
+</html>

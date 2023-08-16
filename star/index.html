@@ -57,67 +57,42 @@
 <body>
     <div id="container">
         <div class="card">
-            <img class="icon" src="" alt="链接图标">
+            <img class="icon" src="./no-favicon.svg" alt="链接图标">
             <a href="https://sms-activate.org/cn">SMS付费接码平台-RU</a>
         </div>
         <div class="card">
-            <img class="icon" src="" alt="链接图标">
+            <img class="icon" src="./no-favicon.svg" alt="链接图标">
             <a href="https://cloudown.top/tools">云镇工具箱</a>
         </div>
         <div class="card">
-            <img class="icon" src="" alt="链接图标">
+            <img class="icon" src="./no-favicon.svg" alt="链接图标">
             <a href="https://pan.zhacg.com/">AcFuns资源下载站（密码2333）</a>
         </div>
         <div class="card">
-            <img class="icon" src="" alt="链接图标">
+            <img class="icon" src="./no-favicon.svg" alt="链接图标">
             <a href="https://zy.xywlapi.cc/">XApi（免费查绑接口）</a>
         </div>
         <div class="card">
-            <img class="icon" src="" alt="链接图标">
+            <img class="icon" src="./no-favicon.svg" alt="链接图标">
             <a href="https://www.102456.xyz/%E6%9F%A5Q%E7%BB%91.html">查Q绑（102456.xyz，自用）</a>
         </div>
         <div class="card">
-            <img class="icon" src="" alt="链接图标">
+            <img class="icon" src="./no-favicon.svg" alt="链接图标">
             <a href="https://api.vvhan.com/">韩小韩API</a>
         </div>
         <div class="card">
-            <img class="icon" src="" alt="链接图标">
+            <img class="icon" src="./no-favicon.svg" alt="链接图标">
             <a href="https://imgse.com/">路过图床</a>
         </div>
         <div class="card">
-            <img class="icon" src="" alt="链接图标">
+            <img class="icon" src="./no-favicon.svg" alt="链接图标">
             <a href="https://链.top/">短链接生成器</a>
         </div>
         <div class="card">
-            <img class="icon" src="" alt="链接图标">
+            <img class="icon" src="./no-favicon.svg" alt="链接图标">
             <a href="https://iconpark.oceanengine.com/official">IconPark开源SVG图标库</a>
         </div>
         <!-- 在这里添加更多卡片链接 -->
     </div>
-
-    <script>
-        function setFaviconIcon(linkElement) {
-            const url = linkElement.getAttribute('href');
-            const iconElement = linkElement.nextElementSibling;
-
-            const faviconPath = '/favicon.ico';
-            const backupIconPath = './no-favicon.svg';
-            /*
-            iconElement.src = faviconPath;
-
-            iconElement.onerror = function() {
-                // 如果无法获取图标，使用备用图标
-                iconElement.src = backupIconPath;
-            };
-            */
-            iconElement.src = backupIconPath;
-        }
-
-        const linkElements = document.querySelectorAll('.card a');
-
-        linkElements.forEach(linkElement => {
-            setFaviconIcon(linkElement);
-        });
-    </script>
 </body>
 </html>
